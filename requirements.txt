@@ -1,0 +1,121 @@
+
+# ==========================================
+# RAG CORE: LANGCHAIN + GROQ
+# ==========================================
+langchain
+langchain-core
+langchain-community
+langchain-text-splitters
+langchain-groq
+groq
+
+# ==========================================
+# DOCUMENT LOADERS: PDF, DOCX, TXT, HTML
+# ==========================================
+pypdf
+pymupdf
+pdfplumber
+python-docx
+unstructured
+beautifulsoup4
+lxml
+markdown
+python-magic
+
+# ==========================================
+# EMBEDDINGS: LOCAL / HUGGING FACE
+# ==========================================
+sentence-transformers
+transformers
+huggingface-hub
+torch
+
+# ==========================================
+# VECTOR DATABASES
+# ==========================================
+chromadb
+langchain-chroma
+qdrant-client
+langchain-qdrant
+faiss-cpu
+
+# ==========================================
+# DATABASES: SQL / NOSQL
+# ==========================================
+sqlalchemy
+psycopg[binary]
+pymongo
+motor
+redis
+
+# ==========================================
+# API / BACKEND
+# ==========================================
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+pydantic-settings
+httpx
+aiofiles
+
+# ==========================================
+# UI / CHAT INTERFACE
+# ==========================================
+streamlit
+gradio
+
+# ==========================================
+# ENVIRONMENT / CONFIGURATION
+# ==========================================
+python-dotenv
+pyyaml
+orjson
+
+# ==========================================
+# WEB SEARCH / WEB DATA
+# ==========================================
+tavily-python
+duckduckgo-search
+requests
+
+# ==========================================
+# AGENTS / WORKFLOWS
+# ==========================================
+langgraph
+langchain-classic
+
+# ==========================================
+# RAG EVALUATION / MONITORING
+# ==========================================
+ragas
+datasets
+langsmith
+
+# ==========================================
+# DOCUMENT PROCESSING / OCR
+# ==========================================
+pillow
+pytesseract
+rapidocr-onnxruntime
+
+# ==========================================
+# DATA PROCESSING
+# ==========================================
+numpy
+pandas
+scikit-learn
+
+# ==========================================
+# SECURITY / RATE LIMITING
+# ==========================================
+slowapi
+bcrypt
+python-jose[cryptography]
+
+# ==========================================
+# TESTING / CODE QUALITY
+# ==========================================
+pytest
+pytest-asyncio
+ruff
