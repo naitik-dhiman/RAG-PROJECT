@@ -1,0 +1,261 @@
+GENERATIVE AI (GenAI) - NOTES
+==============================
+
+1. WHAT IS GENERATIVE AI?
+-------------------------
+Generative AI (GenAI) is a branch of Artificial Intelligence that creates new content such as text, images, audio, video, and code by learning patterns from training data.
+
+Examples:
+- ChatGPT: generates text and answers
+- GitHub Copilot: generates code
+- DALL-E: generates images
+- Speech generation models: generate audio
+
+Traditional AI vs Generative AI:
+- Traditional AI often classifies, predicts, or detects patterns (e.g., spam detection).
+- Generative AI creates new content (e.g., drafting an email).
+
+2. AI, ML, DEEP LEARNING, AND GENAI
+----------------------------------
+Artificial Intelligence (AI):
+Machines performing tasks that normally require human intelligence.
+
+Machine Learning (ML):
+A subset of AI in which systems learn patterns from data.
+
+Deep Learning (DL):
+A subset of ML that uses neural networks with multiple layers.
+
+Generative AI (GenAI):
+AI systems that generate new content, often using deep learning models.
+
+Large Language Model (LLM):
+A model trained on large amounts of text to process and generate language.
+
+These categories overlap; they are not a strict hierarchy in every case.
+
+3. HOW GENERATIVE AI WORKS
+--------------------------
+A simplified workflow:
+1. Training data: text, code, images, or other data.
+2. Model training: the model learns patterns and relationships.
+3. User prompt: the user provides a question or instruction.
+4. Inference: the trained model processes the prompt and generates output.
+5. Output: text, code, images, audio, or other content.
+
+Important:
+A model can generate incorrect information. This is often called a hallucination. Important claims should be verified.
+
+4. LARGE LANGUAGE MODELS (LLMs)
+-------------------------------
+An LLM is a neural network trained to process and generate human language.
+
+Examples include GPT models, Llama, Gemma, and Mistral.
+
+Key terms:
+- Token: A unit of text processed by a model. It may be a word, part of a word, or punctuation.
+- Tokenization: Converting text into tokens.
+- Embedding: A numerical vector representing text or other content.
+- Context window: The amount of input and conversation content a model can consider at once.
+- Inference: Using a trained model to produce an output.
+- Fine-tuning: Further training a pretrained model to adapt it to a task or behavior.
+- Temperature: A generation setting that influences randomness. Higher values often produce more varied responses.
+
+Many text-generation LLMs generate output by repeatedly predicting the next token.
+
+5. TRANSFORMER ARCHITECTURE
+---------------------------
+A Transformer is a neural network architecture widely used in modern LLMs.
+
+Its key mechanism is self-attention, which helps the model represent relationships between tokens.
+
+Main components:
+1. Token embeddings: Convert tokens into numerical representations.
+2. Positional information: Helps represent token order.
+3. Self-attention: Models relationships between tokens.
+4. Feed-forward networks: Transform learned representations.
+5. Output layer: Produces scores used to predict the next token.
+
+6. PROMPT ENGINEERING
+---------------------
+Prompt engineering means designing instructions that help an AI model produce useful output.
+
+A good prompt may include:
+- Role: What perspective should the model take?
+- Task: What should it do?
+- Context: What information does it need?
+- Constraints: What should it avoid?
+- Output format: How should the answer be structured?
+
+Example of a weak prompt:
+"Explain RAG."
+
+Improved prompt:
+"Act as a GenAI mentor. Explain Retrieval-Augmented Generation to a second-year CSE student in simple language, using a real-world example and a Python workflow. Organize the answer with headings."
+
+Prompting techniques:
+- Zero-shot: Ask without providing examples.
+- One-shot: Provide one example.
+- Few-shot: Provide a few examples.
+- Role prompting: Specify a role or perspective.
+- Structured prompting: Request a format such as JSON, a table, or a list.
+
+7. RETRIEVAL-AUGMENTED GENERATION (RAG)
+---------------------------------------
+RAG combines information retrieval with text generation. It allows an LLM to answer questions using relevant information retrieved from an external knowledge source.
+
+Typical RAG workflow:
+1. Load documents (PDFs, text files, web pages, etc.).
+2. Split documents into smaller chunks.
+3. Convert chunks into embeddings.
+4. Store embeddings and associated text in a vector database.
+5. Convert the user's question into an embedding.
+6. Retrieve relevant document chunks.
+7. Provide the question and retrieved context to the LLM.
+8. Generate an answer grounded in the retrieved context.
+
+Main components:
+- Document loader: Reads source files such as PDFs.
+- Text splitter: Divides documents into smaller chunks.
+- Embedding model: Converts content into vectors.
+- Vector database: Stores and searches vectors (e.g., Qdrant, Pinecone, Chroma).
+- Retriever: Finds relevant chunks for a query.
+- LLM: Uses the question and retrieved context to generate a response.
+
+Example:
+A student uploads a textbook and asks, "Explain database normalization." The system retrieves relevant textbook sections and gives the LLM those sections to help answer.
+
+Important:
+RAG does not retrain the model. It provides external information at query time. RAG can still produce mistakes if retrieval is poor or the model misuses the context.
+
+8. EMBEDDINGS AND VECTOR DATABASES
+----------------------------------
+Embeddings represent text or other content as numerical vectors so that similarity can be compared mathematically.
+
+Example:
+- "How can I reset my password?"
+- "I forgot my password. How do I change it?"
+
+These sentences may have similar embeddings because they express similar meanings.
+
+A vector database stores vectors and supports similarity search.
+
+Common similarity measures:
+- Cosine similarity
+- Dot product
+- Euclidean distance
+
+In RAG, the embedding model converts a user's query into a vector. The system compares it with document vectors to find relevant content.
+
+9. RAG VS FINE-TUNING
+---------------------
+RAG:
+- Supplies external knowledge at query time.
+- Knowledge can be updated by updating the source documents or index.
+- Common use: question-answering over documents.
+- Does not directly change model weights.
+
+Fine-tuning:
+- Further trains a model on selected examples.
+- Changes model weights.
+- Can improve task behavior, formatting, or domain-specific patterns.
+- Usually requires another training process when the model must be updated.
+
+RAG and fine-tuning can be used together.
+
+10. AI AGENTS
+-------------
+An AI agent is a system that uses a model to pursue a goal and may select actions, use tools, observe results, and continue working.
+
+Example: A travel assistant may:
+1. Understand the destination and budget.
+2. Search for flights.
+3. Compare options.
+4. Ask for confirmation before booking.
+
+Common agent components:
+- Model
+- Instructions
+- Tools
+- State or memory
+- Control loop
+
+An ordinary LLM mainly generates responses. An agentic system can use tools and perform multi-step workflows, depending on its design and permissions.
+
+11. LANGCHAIN
+-------------
+LangChain is a framework for building applications powered by language models.
+
+It can help connect:
+- Chat models
+- Prompt templates
+- Document loaders
+- Text splitters
+- Retrievers
+- Output parsers
+- Tools and agents
+
+Example: Creating a prompt template in Python
+
+from langchain_core.prompts import ChatPromptTemplate
+
+prompt = ChatPromptTemplate.from_template(
+    "Explain {topic} in simple language."
+)
+
+messages = prompt.format_messages(topic="RAG")
+print(messages)
+
+This example formats messages; it does not call an LLM. A chat model must be connected separately to generate an answer.
+
+12. LIMITATIONS AND RESPONSIBLE USE
+----------------------------------
+Common limitations:
+- Hallucinations: The model may generate false information.
+- Outdated knowledge: The model may not know recent events unless connected to updated sources.
+- Bias: Outputs can reflect biases in training data.
+- Privacy risks: Sensitive information should not be sent to services without understanding their data policies.
+- Prompt injection: Malicious instructions in user input or retrieved documents may try to manipulate an application.
+- Evaluation challenges: A fluent answer is not necessarily a correct answer.
+
+Good practices:
+- Verify important facts.
+- Evaluate outputs on representative test cases.
+- Protect secrets and API keys.
+- Restrict tool permissions.
+- Treat retrieved documents and user inputs as untrusted data.
+- Use citations or source references when factual traceability matters.
+
+13. IMPORTANT TERMS - QUICK REVISION
+------------------------------------
+AI: Systems performing tasks associated with human intelligence.
+ML: Systems learn patterns from data.
+Deep Learning: ML using multi-layer neural networks.
+GenAI: AI that generates new content.
+LLM: A model trained to process and generate language.
+Token: A unit of text processed by a model.
+Embedding: A numerical representation of content.
+Transformer: Neural network architecture used by many LLMs.
+Prompt: Instructions or input given to a model.
+Inference: Running a trained model to generate output.
+RAG: Retrieval plus generation using external information.
+Retriever: Finds relevant information for a query.
+Vector database: Stores and searches vectors.
+Fine-tuning: Further training to adapt model behavior.
+AI agent: A system that can use a model and tools to pursue a goal.
+Hallucination: Incorrect or unsupported content generated by a model.
+
+14. RECOMMENDED LEARNING ORDER
+------------------------------
+1. LLM basics and tokens
+2. Prompt engineering and prompt templates
+3. Calling model APIs from Python
+4. Embeddings and similarity search
+5. Vector databases
+6. Document loading and chunking
+7. RAG pipelines and retrieval quality
+8. Evaluation, citations, and safety
+9. Tool calling and AI agents
+10. Build and deploy a complete GenAI project
+
+Remember: Learn each concept by implementing a small project, not just by watching tutorials.
