@@ -1,7 +1,9 @@
+#importing text file , loading text file 
+
 import os
 from dotenv import load_dotenv
 from langchain.chat_models import init_chat_model
-from langchain_community.document_loaders import TextLoader
+from langchain_community.document_loaders import PyPDFLoader
 from langchain_core.prompts import ChatPromptTemplate
 
 # Load environment variables
@@ -14,7 +16,7 @@ if not api_key:
     raise ValueError("GROQ_API_KEY not found in .env")
 
 # Load the text file
-data = TextLoader("document loaders/notes.txt")
+data = PyPDFLoader("document loaders/notes.pdf")
 docs = data.load()
 
 # Create the prompt template
@@ -39,3 +41,8 @@ prompt = template.format_messages(
 response = model.invoke(prompt)
 
 print(response.content)
+
+
+
+# when we are sending data to from pdf to actual LLM there comes a problem of context window because sometime pdf can be longer 
+
