@@ -23,7 +23,7 @@ Machines performing tasks that normally require human intelligence.
 Machine Learning (ML):
 A subset of AI in which systems learn patterns from data.
 
-Deep Learning (DL):
+Deep Learning (DL):   
 A subset of ML that uses neural networks with multiple layers.
 
 Generative AI (GenAI):

@@ -17,7 +17,7 @@ if not api_key:
 
 # Load the text file
 data = PyPDFLoader("document loaders/notes.pdf")
-docs = data.load()
+docs = data.load()  
 
 # Create the prompt template
 template = ChatPromptTemplate.from_messages([

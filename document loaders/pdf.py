@@ -5,5 +5,5 @@ data = PyPDFLoader("document loaders/notes.pdf")
 docs = data.load()
 
 # 2 len pages 
-print(len(docs))
+print(len(docs)) 
 
