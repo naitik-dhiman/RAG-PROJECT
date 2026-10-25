@@ -2,7 +2,7 @@ from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import CharacterTextSplitter
 
 splitter = CharacterTextSplitter(
-    separator="",
+    separator="", 
     chunk_size = 10,
     chunk_overlap = 1 ,
 )

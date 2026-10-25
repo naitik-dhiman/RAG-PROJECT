@@ -9,6 +9,7 @@ data = WebBaseLoader(url)
 docs = data.load()
 
 print(docs[0].page_content) 
+# print(len(docs))
 
 
 # if multiple page we have to load make a list and traverse on it 

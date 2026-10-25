@@ -43,6 +43,6 @@ response = model.invoke(prompt)
 print(response.content)
 
 
-
+# chunk also have meta data 
 # when we are sending data to from pdf to actual LLM there comes a problem of context window because sometime pdf can be longer 
 
