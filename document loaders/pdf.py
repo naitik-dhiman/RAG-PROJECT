@@ -1,5 +1,8 @@
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import TokenTextSplitter
+# recursive text splitter it does it by based on "/n" , "/n" and all things 
+# refer for actual documentation 
+
 
 data = PyPDFLoader("document loaders/notes.pdf")
 
@@ -21,3 +24,7 @@ print(len(chunks))
 print(chunks[0].page_content)
 
 # meaning captures good here 
+
+
+# simple character based < token based < Recursive text splitter < semantic text splitter 
+# semantic is under development 
