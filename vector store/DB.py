@@ -58,8 +58,25 @@ vector_store  = Chroma.from_documents(
 
 )
 
+# vector store is not responsible  , vector store will retrieve and return the similar thing from those embeddings 
+
+result = vector_store.similarity_search("What is used for data analysis " , k = 2  )
 
 
+for  r in result : 
+    print (r.page_content)
+    print ("----------------------------")
+    print(r.metadata)
+
+# jupyter notebook is prefered here because if run code once then it will create the database and if we re run it it will make the database again 
+
+
+
+# retrieving the 
+
+retriever = vector_store.as_retriever()
+
+docs = retriever.invoke()
 
 
 
