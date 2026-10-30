@@ -1,0 +1,8 @@
+we have similarity search algo in vector store but then why we use retrievers because algo's in vector store  are not run ables makes them suitable for chaining  and not so reliable for long data / pdf's 
+
+and they have specific techniques in retrievers for retrieving relevant information 
+
+
+search strategy - :
+1. similarity search
+2. MMR maximum marginal relevance 
